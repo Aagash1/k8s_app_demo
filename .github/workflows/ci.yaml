@@ -84,7 +84,7 @@ jobs:
       - name: Checkout deploy repository
         uses: actions/checkout@v4
         with:
-          repository: Aagash1/k8s_argocd_demo
+          repository: aagash1/k8s_argocd_demo
           token: ${{ secrets.GH_PAT }}
           path: deploy-repo
 
@@ -105,7 +105,7 @@ jobs:
           git commit -m "chore: update image tag to ${{ steps.version.outputs.tag }}"
           git push origin $BRANCH
           gh pr create \
-            --repo Aagash1/k8s_argocd_demo \
+            --repo aagash1/k8s_argocd_demo \
             --base main \
             --head $BRANCH \
             --title "chore: update image tag to ${{ steps.version.outputs.tag }}" \
